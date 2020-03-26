@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [13.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -25,10 +25,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install
-        # Install and build project
         run: |
           make install
-        # Add environment variables
         env:
           CI: true
       - name: Run linter

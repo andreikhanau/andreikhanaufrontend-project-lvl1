@@ -12,8 +12,8 @@ module.exports = {
         'ecmaVersion': 2018,
         'sourceType': 'module'
     },
-    'rules': {
-        'accessor-pairs': 'error',
+    'rules':{
+        'accessor-pairs' : 'error',
         'array-bracket-newline': 'error',
         'array-bracket-spacing': 'error',
         'array-callback-return': 'error',
@@ -267,5 +267,6 @@ module.exports = {
         'wrap-regex': 'error',
         'yield-star-spacing': 'error',
         'yoda': 'error'
-    }
+    },
+        
 };

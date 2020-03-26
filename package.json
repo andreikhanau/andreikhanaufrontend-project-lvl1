@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andreikhanau/frontend-project-lvl1.git"
+    "url": "git+https://github.com/andreikhanau/andreikhanaumake frontend-project-lvl1.git"
   },
   "author": "Andrei Khanau",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/andreikhanau/frontend-project-lvl1/issues"
+    "url": "https://github.com/andreikhanau/andreikhanaufrontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/andreikhanau/frontend-project-lvl1#readme",
+  "homepage": "https://github.com/andreikhanau/andreikhanaufrontend-project-lvl1#readme",
   "dependencies": {
     "readline-sync": "^1.4.10"
   },

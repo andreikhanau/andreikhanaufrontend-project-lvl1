@@ -1,7 +1,11 @@
 install:  
 		 npm install
-start:  
-		 node bin/brain-even.js
+games:  
+		 brain-games
+even:
+		 brain-even
+calc:
+		 brain-calc
 publish:
 		 npm publish --dry-run
 lint:

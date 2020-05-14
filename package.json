@@ -8,7 +8,8 @@
   },
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-even.js"
+    "brain-even": "src/bin/brain-even.js",
+    "brain-calc": "src/bin/brain-calc.js"
   },
   "repository": {
     "type": "git",

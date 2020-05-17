@@ -3,6 +3,7 @@
 
 Install:
 npm -g install andreikhanaufrontend-project-lvl1
+https://asciinema.org/a/2DUh3hSyVkoRocXtH8vSOqWTj
 
 Asciinema`s for "Brain-games":
 

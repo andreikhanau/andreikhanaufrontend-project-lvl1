@@ -9,7 +9,7 @@ const gcdEngine = () => {
       for (let i = findSmallestNum(num1, num2); i <= findSmallestNum(num1, num2); i--) {
         if (num1 % i === 0 && num2 % i === 0) {return i}
     }};
-    const answer = findGreatestDiviser(randNum1, randNum2);
+    const answer = findGreatestDiviser(randNum1, randNum2).toString();
     
     return {question, answer};
   };

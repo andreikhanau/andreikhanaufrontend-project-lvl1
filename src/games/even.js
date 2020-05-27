@@ -1,20 +1,15 @@
-#!/usr/bin/env node
-import {gameFlow} from '../index.js';
+import gameFlow from '../index.js';
+import randNumGenerator from '../tools.js';
 
-const isEven = (num) => {
-      if (num % 2 === 0) {
-        return true;
-      } return false;
-  };
 const evenEngine = () => {
-    const question = Math.floor(Math.random() * 100);
-    const answer = isEven(question) ? 'yes' : 'no';
-    return {question, answer};
-  };
-export const evenGame = () => {
-        const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".'
-        gameFlow(gameTask, evenEngine);
-  };
-
- 
-    
+  const randMaxNumber = 100;
+  const isEven = (num) => num % 2 === 0;
+  const question = randNumGenerator(randMaxNumber);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return { question, answer };
+};
+const evenGame = () => {
+  const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
+  gameFlow(gameTask, evenEngine);
+};
+export default evenGame;

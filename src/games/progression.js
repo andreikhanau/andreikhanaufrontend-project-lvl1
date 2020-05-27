@@ -1,21 +1,28 @@
-import {gameFlow} from '../index.js';
+import gameFlow from '../index.js';
+import randNumGenerator from '../tools.js';
+
 const brainProgressionEngine = () => {
-    const randNum = Math.floor((Math.random() * 100) + 1);
-    const randNum2 = Math.floor((Math.random() * 10) + 1);
-    const randNum3 = Math.floor((Math.random() * 9) + 1);
-    const numbersGenerator = () => {
-     let arrayOfNumbers = [];
-       for (let i = randNum; arrayOfNumbers.length < 10; i += randNum2) {
-        arrayOfNumbers.push(i);
-      } return arrayOfNumbers;
+  const maxRandNum = 100;
+  const maxDifferenceBetwNums = 10;
+  const maxIndexOfhiddenNum = 9;
+  const randNum = randNumGenerator(maxRandNum);
+  const amountOfNumbersInQuestion = 10;
+  const randDifference = randNumGenerator(maxDifferenceBetwNums);
+  const randHiddenNum = randNumGenerator(maxIndexOfhiddenNum);
+  const numbersGenerator = () => {
+    const arrayOfNumbers = [];
+    for (let i = randNum; arrayOfNumbers.length < amountOfNumbersInQuestion; i += randDifference) {
+      arrayOfNumbers.push(i);
+    } return arrayOfNumbers;
   };
-  const questionArray = numbersGenerator();
-  const answer = questionArray[randNum3].toString();
-  questionArray[randNum3] = '..';
-  const question = questionArray.join(' ');
-  return {question, answer};
-  };
-  export const progressionGame = () => {
-    const gameTask = 'What number is missing in the progression?'
-    gameFlow(gameTask, brainProgressionEngine);
+  const questionAsArray = numbersGenerator();
+  const answer = questionAsArray[randHiddenNum].toString();
+  questionAsArray[randHiddenNum] = '..';
+  const question = questionAsArray.join(' ');
+  return { question, answer };
 };
+const progressionGame = () => {
+  const gameTask = 'What number is missing in the progression?';
+  gameFlow(gameTask, brainProgressionEngine);
+};
+export default progressionGame;

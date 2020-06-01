@@ -1,4 +1,6 @@
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/andreikhanau/andreikhanaufrontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/61b3646b4779b6cf4443/maintainability" /></a>
+
+<a href="https://codeclimate.com/github/andreikhanau/andreikhanaufrontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/61b3646b4779b6cf4443/test_coverage" /></a>
 ![Node CI](https://github.com/andreikhanau/andreikhanaufrontend-project-lvl1/workflows/Node%20CI/badge.svg)
 
 Install:

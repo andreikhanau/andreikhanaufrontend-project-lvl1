@@ -5,10 +5,12 @@ const gameFlow = (gameTask, gameEngine) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}`);
   console.log(gameTask);
-  for (let i = 0; i < 3; i += 1) {
+  const amountOfRounds = 3;
+  for (let i = 0; i < amountOfRounds; i += 1) {
     const { question, answer } = gameEngine();
-    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
-    if (userAnswer === answer) {
+    console.log(`Question: ${question} `);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === answer.toString()) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);

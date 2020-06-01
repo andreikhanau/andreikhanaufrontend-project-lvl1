@@ -1,28 +1,28 @@
 import gameFlow from '../index.js';
-import randNumGenerator from '../tools.js';
+import { randNumGenerator } from '../tools.js';
 
-const brainProgressionEngine = () => {
+const brainProgressionGenerator = () => {
   const maxRandNum = 100;
   const maxDifferenceBetwNums = 10;
-  const maxIndexOfhiddenNum = 9;
-  const randNum = randNumGenerator(maxRandNum);
   const amountOfNumbersInQuestion = 10;
+  const maxIndexOfHiddenNum = amountOfNumbersInQuestion - 1;
+  const randNum = randNumGenerator(maxRandNum);
   const randDifference = randNumGenerator(maxDifferenceBetwNums);
-  const randHiddenNum = randNumGenerator(maxIndexOfhiddenNum);
+  const randHiddenNum = randNumGenerator(maxIndexOfHiddenNum);
   const numbersGenerator = () => {
-    const arrayOfNumbers = [];
-    for (let i = randNum; arrayOfNumbers.length < amountOfNumbersInQuestion; i += randDifference) {
-      arrayOfNumbers.push(i);
-    } return arrayOfNumbers;
+    const numbers = [];
+    for (let i = randNum; numbers.length < amountOfNumbersInQuestion; i += randDifference) {
+      numbers.push(i);
+    } return numbers;
   };
-  const questionAsArray = numbersGenerator();
-  const answer = questionAsArray[randHiddenNum].toString();
-  questionAsArray[randHiddenNum] = '..';
-  const question = questionAsArray.join(' ');
+  const lineOfNumbers = numbersGenerator();
+  const answer = lineOfNumbers[randHiddenNum];
+  lineOfNumbers[randHiddenNum] = '..';
+  const question = lineOfNumbers.join(' ');
   return { question, answer };
 };
 const progressionGame = () => {
   const gameTask = 'What number is missing in the progression?';
-  gameFlow(gameTask, brainProgressionEngine);
+  gameFlow(gameTask, brainProgressionGenerator);
 };
 export default progressionGame;

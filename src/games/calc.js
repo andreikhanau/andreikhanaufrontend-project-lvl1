@@ -1,8 +1,7 @@
 import gameFlow from '../index.js';
-import randNumGenerator from '../tools.js';
+import { randNumGenerator, getRandomItem } from '../tools.js';
 
-const calcEngine = () => {
-  const getRandomItem = (array) => array[Math.floor(Math.random() * array.length)];
+const calcGameGenerator = () => {
   const maxRandNum = 100;
   const randNum1 = randNumGenerator(maxRandNum);
   const randNum2 = randNumGenerator(maxRandNum);
@@ -11,13 +10,13 @@ const calcEngine = () => {
   let answer = '';
   switch (randomOperator) {
     case '-':
-      answer = (randNum1 - randNum2).toString();
+      answer = (randNum1 - randNum2);
       break;
     case '+':
-      answer = (randNum1 + randNum2).toString();
+      answer = (randNum1 + randNum2);
       break;
     case '*':
-      answer = (randNum1 * randNum2).toString();
+      answer = (randNum1 * randNum2);
       break;
     default:
       break;
@@ -27,6 +26,6 @@ const calcEngine = () => {
 
 const calcGame = () => {
   const gameTask = 'What is the result of the expression?';
-  gameFlow(gameTask, calcEngine);
+  gameFlow(gameTask, calcGameGenerator);
 };
 export default calcGame;

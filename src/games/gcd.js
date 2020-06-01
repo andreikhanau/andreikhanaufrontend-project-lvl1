@@ -6,7 +6,7 @@ const gcdGenerator = () => {
   const randNum1 = randNumGenerator(maxRandNum);
   const randNum2 = randNumGenerator(maxRandNum);
   const question = `${randNum1} ${randNum2}`;
-  const answer = findGreatestDiviser(randNum1, randNum2).toString();
+  const answer = findGreatestDiviser(randNum1, randNum2);
   return { question, answer };
 };
 

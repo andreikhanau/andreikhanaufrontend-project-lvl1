@@ -1,7 +1,8 @@
 import gameFlow from '../index.js';
-import { isEven, randNumGenerator } from '../tools.js';
+import randNumGenerator from '../tools.js';
 
-const evenGameGenerator = () => {
+const isEven = (num) => num % 2 === 0;
+const evenGameDataGenerator = () => {
   const randMaxNumber = 100;
   const question = randNumGenerator(randMaxNumber);
   const answer = isEven(question) ? 'yes' : 'no';
@@ -10,6 +11,6 @@ const evenGameGenerator = () => {
 
 const evenGame = () => {
   const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
-  gameFlow(gameTask, evenGameGenerator);
+  gameFlow(gameTask, evenGameDataGenerator);
 };
 export default evenGame;

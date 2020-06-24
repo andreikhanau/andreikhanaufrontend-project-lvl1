@@ -1,11 +1,12 @@
-import gameFlow from '../index.js';
-import randNumGenerator from '../tools.js';
+import createGameFlow from '../index.js';
+import getRandomInt from '../tools.js';
 
-const getRandomItem = (arrayOfItems) => arrayOfItems[randNumGenerator(arrayOfItems.length - 1)];
-const calcGameDataGenerator = () => {
+const getRandomItem = (arrayOfItems) => arrayOfItems[getRandomInt(0, arrayOfItems.length - 1)];
+const generateCalcGameData = () => {
+  const minRandNum = 1;
   const maxRandNum = 100;
-  const randNum1 = randNumGenerator(maxRandNum);
-  const randNum2 = randNumGenerator(maxRandNum);
+  const randNum1 = getRandomInt(minRandNum, maxRandNum);
+  const randNum2 = getRandomInt(minRandNum, maxRandNum);
   const randomOperator = getRandomItem(['-', '+', '*']);
   const question = `${randNum1}${randomOperator}${randNum2}`;
   let calcResult;
@@ -28,6 +29,6 @@ const calcGameDataGenerator = () => {
 
 const calcGame = () => {
   const gameTask = 'What is the result of the expression?';
-  gameFlow(gameTask, calcGameDataGenerator);
+  createGameFlow(gameTask, generateCalcGameData);
 };
 export default calcGame;

@@ -1,20 +1,19 @@
-import gameFlow from '../index.js';
-import randNumGenerator from '../tools.js';
+import createGameFlow from '../index.js';
+import getRandomInt from '../tools.js';
 
-const progressionGenerator = () => {
-  const amountOfNumbersInProgression = 10;
+const generateProgression = (amountOfNumbers = 10, minDifference = 1, maxDifference = 10) => {
+  const minRandNum = 1;
   const maxRandNum = 100;
-  const randNum = randNumGenerator(maxRandNum);
-  const maxDiffBetwNumbers = 10;
-  const randDifference = randNumGenerator(maxDiffBetwNumbers);
-  const numbers = [];
-  for (let i = randNum; numbers.length < amountOfNumbersInProgression; i += randDifference) {
-    numbers.push(i);
-  } return numbers;
+  const randNum = getRandomInt(minRandNum, maxRandNum);
+  const randDifference = getRandomInt(minDifference, maxDifference);
+  const progression = [];
+  for (let i = randNum; progression.length < amountOfNumbers; i += randDifference) {
+    progression.push(i);
+  } return progression;
 };
-const gcdGameDataGenerator = () => {
-  const progression = progressionGenerator();
-  const randHiddenNum = randNumGenerator(progression.length - 1);
+const generateGcdGameData = () => {
+  const progression = generateProgression();
+  const randHiddenNum = getRandomInt(0, progression.length - 1);
   const answer = progression[randHiddenNum].toString();
   progression[randHiddenNum] = '..';
   const question = progression.join(' ');
@@ -23,6 +22,6 @@ const gcdGameDataGenerator = () => {
 
 const progressionGame = () => {
   const gameTask = 'What number is missing in the progression?';
-  gameFlow(gameTask, gcdGameDataGenerator);
+  createGameFlow(gameTask, generateGcdGameData);
 };
 export default progressionGame;

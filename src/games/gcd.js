@@ -1,24 +1,25 @@
-import gameFlow from '../index.js';
-import randNumGenerator from '../tools.js';
+import createGameFlow from '../index.js';
+import getRandomInt from '../tools.js';
 
-const findGreatestDiviser = (num1, num2) => {
+const finfGcd = (num1, num2) => {
   if (!num2) {
     return num1;
   }
-  return findGreatestDiviser(num2, num1 % num2);
+  return finfGcd(num2, num1 % num2);
 };
 
-const gcdGameDataGenerator = () => {
+const generateGcdGameData = () => {
+  const minRandNum = 1;
   const maxRandNum = 100;
-  const randNum1 = randNumGenerator(maxRandNum);
-  const randNum2 = randNumGenerator(maxRandNum);
+  const randNum1 = getRandomInt(minRandNum, maxRandNum);
+  const randNum2 = getRandomInt(minRandNum, maxRandNum);
   const question = `${randNum1} ${randNum2}`;
-  const answer = findGreatestDiviser(randNum1, randNum2).toString();
+  const answer = finfGcd(randNum1, randNum2).toString();
   return { question, answer };
 };
 
 const gcdGame = () => {
   const gameTask = 'Find the greatest common divisor of given numbers.';
-  gameFlow(gameTask, gcdGameDataGenerator);
+  createGameFlow(gameTask, generateGcdGameData);
 };
 export default gcdGame;

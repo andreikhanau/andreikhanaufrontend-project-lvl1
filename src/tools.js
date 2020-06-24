@@ -1,2 +1,6 @@
-const randNumGenerator = (maxNumber) => Math.floor((Math.random() * maxNumber) + 1);
-export default randNumGenerator;
+const getRandomInt = (min = 1, max = 100) => {
+  const lowBorder = Math.ceil(min);
+  const upperBorder = Math.floor(max);
+  return Math.floor(Math.random() * (upperBorder - lowBorder)) + lowBorder;
+};
+export default getRandomInt;
